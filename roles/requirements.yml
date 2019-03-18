@@ -1,0 +1,11 @@
+---
+# vim: bs=2 sw=2 expandtab:
+
+- src: git+http://gitlab.budcca-demo.lab/rgm-ansible/ansible-role-lvm-mount.git
+  name: ansible-role-lvm-mount
+
+- src: git+http://gitlab.budcca-demo.lab/rgm-ansible/ansible-role-snmp.git
+  name: ansible-role-snmp
+
+- src: git+http://gitlab.budcca-demo.lab/rgm-ansible/ansible-role-rgm.git
+  name: ansible-role-rgm
