@@ -1,0 +1,9 @@
+[loca]
+localhost		ansible_connection=local
+
+[rgm:children]
+local
+
+[centos]
+repo-rgm
+build-rgm

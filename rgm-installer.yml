@@ -1,0 +1,8 @@
+- name: Install RGM 
+  hosts: rgm
+  remote_user: root
+
+  roles:
+  - ansible-role-lvm-mounts
+  - ansible-role-snmp
+  - ansible-role-rgm
