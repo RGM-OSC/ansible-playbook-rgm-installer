@@ -1,4 +1,4 @@
-[loca]
+[local]
 localhost		ansible_connection=local
 
 [rgm:children]
