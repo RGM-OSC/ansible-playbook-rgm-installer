@@ -1,6 +1,6 @@
 ---
 
-lvm_disk_rgm:
+lvm_disk:
   device: '/dev/sdb'
   lvm_vg: 'vg_rgmdata'
   partitions:
