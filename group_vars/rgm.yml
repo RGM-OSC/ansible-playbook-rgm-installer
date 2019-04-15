@@ -20,3 +20,6 @@ lvm_disk:
     mountpoint: '/var/lib/elasticsearch'
     filesystem: 'xfs'
     size: '10G'
+
+# install extra plugins for grafana
+grafana_install_plugins: False
