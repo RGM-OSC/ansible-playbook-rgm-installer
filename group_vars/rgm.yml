@@ -1,25 +1,16 @@
 ---
 
-lvm_disk:
-  device: '/dev/sdb'
-  lvm_vg: 'vg_rgmdata'
-  partitions:
-  - name: 'rgm'
-    mountpoint: '/srv/rgm'
-    filesystem: 'ext4'
-    size: '20G'
-  - name: 'mariadb'
-    mountpoint: '/var/lib/mysql'
-    filesystem: 'xfs'
-    size: '5G'
-  - name: 'influxdb'
-    mountpoint: '/var/lib/influxdb'
-    filesystem: 'xfs'
-    size: '10G'
-  - name: 'elastic'
-    mountpoint: '/var/lib/elasticsearch'
-    filesystem: 'xfs'
-    size: '10G'
+# the one-liner should append the lvm_disk variable to this file like the
+# following example:
+#
+# lvm_disk:
+#   device: '/dev/sdb'
+#   lvm_vg: 'vg_rgmdata'
+#   partitions:
+#   - name: 'rgm'
+#     mountpoint: '/srv/rgm'
+#     filesystem: 'ext4'
+#     size: '20G'
 
 # install extra plugins for grafana
 grafana_install_plugins: False
