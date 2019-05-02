@@ -1,5 +1,6 @@
 ---
-
+# vim: bs=2 sw=2 expandtab:
+#
 # the one-liner should append the lvm_disk variable to this file like the
 # following example:
 #
@@ -12,8 +13,14 @@
 #     filesystem: 'ext4'
 #     size: '20G'
 
+# RGM base path
+rgm_root_path: /srv/rgm
+
 # RGM snmp community name
 snmp_ro_community: RGM
 
 # install extra plugins for grafana
 grafana_install_plugins: True
+
+mkdocs_source_dir: "{{ ansible_env.PWD }}/mkdocs"
+mkdocs_root_dir: "{{ rgm_root_path }}/mkdocs"
