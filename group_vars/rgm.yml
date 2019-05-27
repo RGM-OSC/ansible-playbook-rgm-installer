@@ -19,8 +19,9 @@ rgm_root_path: /srv/rgm
 # RGM snmp community name
 snmp_ro_community: RGM
 
-# install extra plugins for grafana
-grafana_install_plugins: True
+# install extra plugins for grafana - uncomment if you wish to change the default behavior
+# grafana_install_plugins_core: True
+# grafana_install_plugins_contrib: False
 
 mkdocs_source_dir: "{{ ansible_env.PWD }}/mkdocs"
 mkdocs_root_dir: "{{ rgm_root_path }}/mkdocs"
