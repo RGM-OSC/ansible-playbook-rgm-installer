@@ -3,6 +3,6 @@
   remote_user: root
 
   roles:
-  - ansible-role-lvm-mount
-  - ansible-role-snmp
-  - ansible-role-rgm
+  - role-lvm-partitionner
+  - role-snmp
+  - role-rgm

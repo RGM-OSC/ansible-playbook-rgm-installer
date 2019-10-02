@@ -1,11 +1,14 @@
 ---
 # vim: bs=2 sw=2 expandtab:
 
-- src: git+https://git.rgm-cloud.io/ansible-role-lvm-mount.git
-  name: ansible-role-lvm-mount
+- src: git+https://framagit.org/rgm-community/ansible/roles/role-lvm-partitionner.git
+  version: dev
+  name: role-lvm-partitionner
 
-- src: git+https://git.rgm-cloud.io/ansible-role-snmp.git
-  name: ansible-role-snmp
+- src: git+https://framagit.org/rgm-community/ansible/roles/role-snmp.git
+  version: dev
+  name: role-snmp
 
-- src: git+https://git.rgm-cloud.io/ansible-role-rgm.git
-  name: ansible-role-rgm
+- src: git+https://framagit.org/rgm-community/ansible/roles/role-rgm.git
+  version: dev
+  name: role-rgm

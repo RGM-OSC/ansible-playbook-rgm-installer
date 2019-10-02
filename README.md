@@ -28,9 +28,11 @@ The playbook depends on 3 Ansible roles, all maintained by the **RGM community**
 
 | role name | description |
 |-----------|-------------|
-| [lvm-mount](https://git.rgm-cloud.io/browse/?p=ansible-role-lvm-mount.git;a=tree) | This role creates LVM PVs, VGs, LVs, formats the LV, add the corresponding mount-points, and ensure the new volume are correctly mounted |
-| [snmp](https://git.rgm-cloud.io/browse/?p=ansible-role-snmp.git;a=tree)           | This role installs a SNMP agent on target server, configures a default SNMP v1/v2 community for RGM (in RO) |
-| [rgm](https://git.rgm-cloud.io/browse/?p=ansible-role-rgm.git;a=tree)             | This role handles all the aspects of RGM installation, configuration and customization |
+| [role-lvm-partitionner](https://framagit.org/rgm-community/ansible/roles/role-lvm-partitionner) | This role creates LVM PVs, VGs, LVs, formats the LV, add the corresponding mount-points, and ensure the new volume are correctly mounted |
+| [role-snmp](https://framagit.org/rgm-community/ansible/roles/role-snmp)                         | This role installs a SNMP agent on target server, configures a default SNMP v1/v2 community for RGM (in RO) |
+| [role-rgm](https://framagit.org/rgm-community/ansible/roles/role-rgm)                           | This role handles all the aspects of RGM installation, configuration and customization |
+
+
 
 
 Playbook variables
@@ -41,7 +43,7 @@ Playbook variables
 | variable name                   | default     | used by roles | description |
 |---------------------------------|-------------|---------------|-------------|
 | snmp_ro_community               | *undefined* | snmp, rgm     | set the SNMP community (ro) |
-| lvm_disk                        | *undefined* | lvm-mount     | a complex data structure that describes how to prepare LVM volumes. see lvm-mount Ansible role [description](https://git.rgm-cloud.io/browse/?p=ansible-role-lvm-mount.git;a=blob_plain;f=README.md) for details |
+| lvm_disk                        | *undefined* | lvm-mount     | a complex data structure that describes how to prepare LVM volumes. see lvm-partitionner Ansible role [description](https://framagit.org/rgm-community/ansible/roles/role-lvm-partitionner) for details |
 | rgm_root_path                   | /srv/rgm    | rgm           | root path for RGM installation |
 | grafana_install_plugins_core    | True        | rgm           | installs Grafana's official plugins selection |
 | grafana_install_plugins_contrib | False       | rgm           | installs Grafana's 3rd party plugins selection |
@@ -49,7 +51,7 @@ Playbook variables
 | proxy_port                      | *undefined* | rgm           | if a HTTP proxy is required for outgoing HTTP/HTTPS connections, defines the proxy's TCP port |
 
 Many other variables exists and can be tweaked to fit your needs, altrought you probably shouldn't have to. For more information,
-please have a look on rgm role [README](https://git.rgm-cloud.io/browse/?p=ansible-role-rgm.git;a=blob_plain;f=README.md) 
+please have a look on rgm role [README](https://framagit.org/rgm-community/ansible/roles/role-rgm)
 
 
 ### 4any related variables
