@@ -1,4 +1,4 @@
-- name: Install RGM 
+- name: Install RGM
   hosts: rgm
   remote_user: root
 

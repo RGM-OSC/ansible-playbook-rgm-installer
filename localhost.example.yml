@@ -1,0 +1,60 @@
+---
+
+# host_vars/localhost.yml example file
+# 
+# File file is intended to easyly customize the local RGM installation
+# This file is *not* under ant SCM control and should be kept *safe* and *persistent*
+# as it describes installation specific stuff
+#
+# ownership should be root:root and privs should be 0640
+#
+# Copyright SCC 2020
+
+##### Apache HTTPd server customization
+## SSLCertificateFile directive:
+#http_ssl_cert_file: /etc/pki/tls/certs/localhost.crt
+## SSLCertificateKeyFile directive:
+#http_ssl_key_file: /etc/pki/tls/private/localhost.key
+## SSLCertificateChainFile directive:
+#http_ssl_cert_chain: /etc/pki/tls/certs/server-chain.crt
+## SSLCACertificateFile directive:
+#http_ssl_cert_ca: /etc/pki/tls/certs/ca-bundle.crt
+
+##### Infra HTTP proxy for Internet access
+## This is normally setted by the one-liner with option "-p <host>:<port>"
+#proxy_host: 192.168.0.1
+#proxy_port: 8080
+
+##### disk partitionning
+## This is normally automatically setted by the one-liner if it discovers an unformatted disk.
+## You can however manually specify a new disk or unused partition afterwards.
+## CAUTION: doesn't handle the copy of data if the target mountpoint already contains data.
+## YOU'LL HAVE TO HANDLE THIS BY YOUR OWN !
+#lvm_disk:
+#  device: '/dev/sdb1'
+#  lvm_vg: 'vg_data'
+#  partitions:
+#  - name: 'log'
+#    mountpoint: '/var/log'
+#    filesystem: 'xfs'
+#    size: 10G
+
+##### NTP server - defaults use public ntp.org pools
+#ntp_servers:
+#- '0.pool.ntp.org'
+#- '1.pool.ntp.org'
+
+##### SNMP server
+#snmp_ro_community: 'public'
+#snmp_location: 'somewhere'
+#snmp_contact_name: 'The IT Team'
+#snmp_contact_email: 'admin@somewhere.invalid'
+
+##### Commercial 3rd-party software installation
+## RGM can (or have to) require the installation of some software packages from third-party providers
+## that are unfortunately distributed with a commercial license. So they are *not* installed by default
+## by RGM.
+## If you wish to install them anyway, you have explicitly allow RGM to install them by enabling the following variables.
+## Please note that the activation of these implicitly means you accept the respective licenses !
+#install_commercial_vmware:" true
+#install_commercial_oracle:" true
