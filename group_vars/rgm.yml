@@ -25,3 +25,13 @@ snmp_ro_community: RGM
 
 mkdocs_source_dir: "{{ ansible_env.PWD }}/mkdocs"
 mkdocs_root_dir: "{{ rgm_root_path }}/mkdocs"
+
+
+### Elasticsearch multi-node cluster mode
+#
+# The following parameters are dedicated to ES multi-node cluster
+# uncomment them only in the case of using a multi-node ES cluster with RGM !
+#
+#rgm_elastic_cluster: RGM
+# Specify how replicas are expected
+#es_shards_replicas: 3
