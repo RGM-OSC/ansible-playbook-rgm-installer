@@ -1,9 +1,15 @@
+# RGM locally runs on Ansible host
 [local]
 localhost		ansible_connection=local
+
+# Elasticsearch nodes for ES cluster mode
+# adapt to your infra
+[elastic_nodes]
+elastic_node.example
 
 [rgm:children]
 local
 
-[centos]
-repo-rgm
-build-rgm
+[elastic:children]
+local
+elastic_nodes

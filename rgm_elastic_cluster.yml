@@ -1,0 +1,17 @@
+---
+
+- name: Configure RGM and Elasticsearch node for ES RGM cluster 
+  hosts: elastic
+  remote_user: root
+
+  vars:
+    # When upgrading a single ES node to cluster mode, it storage backend
+    # must be deleted. 
+    #force_delete_es: true
+
+  tasks:
+
+  - name: test
+    include_role:
+      name: ansible-role-rgm
+      tasks_from: elastic_cluster.yml

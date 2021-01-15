@@ -1,0 +1,14 @@
+---
+# this ansible host_vars file is an example for
+# Elasticsearch multi-node cluster host specific configuration
+# in multi-node mode, each ES node *must* be specifically configured !
+
+# the ES node name
+node_name: rgm-es-node-1
+
+# is the node a *master* node ?
+es_master: true
+# is the node a *data* node ?
+es_data: true
+# is the node an *ingest* node ?
+es_ingest: false
