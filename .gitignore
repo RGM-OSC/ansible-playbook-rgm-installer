@@ -1,4 +1,4 @@
 roles/*
-!roles/requirements.yml
+!roles/req*.yml
 *.log
 test*yml
