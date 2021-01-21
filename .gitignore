@@ -1,4 +1,6 @@
 roles/*
 !roles/req*.yml
+host_vars/**
+!host_vars/*example.yml
 *.log
-test*yml
+test*.yml
