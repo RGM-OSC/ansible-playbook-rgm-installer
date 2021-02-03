@@ -50,6 +50,9 @@
 #snmp_contact_name: 'The IT Team'
 #snmp_contact_email: 'admin@somewhere.invalid'
 
+##### RGM Business licensed customers
+rgm_business_registration_id:
+
 ##### Commercial 3rd-party software installation
 ## RGM can (or have to) require the installation of some software packages from third-party providers
 ## that are unfortunately distributed with a commercial license. So they are *not* installed by default
