@@ -7,8 +7,9 @@
   tasks:
   - name: ensure host_vars is linked to /etc/rgm
     file:
+      path: host_vars/localhost
       state: link
-      #todo
+
   - name: ensure obsolete RPM repos are removed
     file:
       path: "/etc/yum.repos.d/{{ item }}.repo"
