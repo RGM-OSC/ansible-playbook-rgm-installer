@@ -1,0 +1,38 @@
+---
+# This playbook replaces the one-liner RGM bootstrapper script
+# currently supports only "basic" RGM installation, with no "business" support.
+
+- name: RGM remote installer
+  hosts: rgm
+  remote_user: root
+
+  pre_tasks:
+
+  - name: ensure EPEL is activated
+    yum:
+      name: epel-release
+      state: latest
+    register: epel_enabled
+
+  - name: install RGM prerequisites
+    yum:
+      name:
+      - openssl
+      - ansible
+      - git
+      state: latest
+      update_cache: "{{ epel_enabled.changed }}"
+
+  - name: install Galaxy collections
+    command: ansible-galaxy collection install community.mysql
+
+  - name: retrieve RGM GPG key
+    get_url:
+      url: https://installer.rgm-cloud.io/RPM-GPG-KEY-rgm
+      dest: /etc/pki/rpm-gpg/RPM-GPG-KEY-rgm
+      mode: '0440'
+
+  roles:
+  - role-lvm-partitionner
+  - role-snmp
+  - role-rgm

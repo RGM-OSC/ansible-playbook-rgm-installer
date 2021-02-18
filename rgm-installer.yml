@@ -1,4 +1,25 @@
-- name: Install RGM
+---
+
+- name: pre-flight play for host conformance
+  hosts: rgm
+  remote_user: root
+
+  tasks:
+  - name: ensure host_vars is linked to /etc/rgm
+    file:
+      path: host_vars/localhost
+      state: link
+
+  - name: ensure obsolete RPM repos are removed
+    file:
+      path: "/etc/yum.repos.d/{{ item }}.repo"
+      state: absent
+    with_items:
+    - rgm-community
+    - rgm-partners
+
+
+- name: RGM install play
   hosts: rgm
   remote_user: root
 
