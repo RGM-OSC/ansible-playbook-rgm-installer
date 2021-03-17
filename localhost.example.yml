@@ -8,7 +8,13 @@
 #
 # ownership should be root:root and privs should be 0640
 #
-# Copyright SCC 2020
+# Copyright SCC 2020, 2021
+
+##### Systems managed through Red Hat Satellite or Foreman using RHSM
+## For sush systems, we *must* know *if* EPEL is managed by RHSM. In such case, it is
+## *mandatory* to know which channel provides EPEL as we must exclude *conflicting*
+## packages with RGM !
+#rhsm_epel_repo: myorg_CentOS7_EPEL
 
 ##### Apache HTTPd server customization
 ## SSLCertificateFile directive:
@@ -61,3 +67,10 @@ rgm_business_registration_id:
 ## Please note that the activation of these implicitly means you accept the respective licenses !
 #install_commercial_vmware: true
 #install_commercial_oracle: true
+
+##### Elasticsearch Curator values
+## Elasticsearch curator is triggered daily by a cronjob and execute some maintenance and sanitization actions
+## on the ES cluster. In particular it handle the closing and the deletion of daily indices
+#curator:
+#  close_indices_delay: 2
+#  delete_indices_delay: 30
