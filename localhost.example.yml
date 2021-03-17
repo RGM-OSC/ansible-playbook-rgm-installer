@@ -59,6 +59,12 @@
 ##### RGM Business licensed customers
 rgm_business_registration_id:
 
+##### Allow "Rawhide" (devel) RPM repositories
+## rawhide RPM packages are built from the RGM developpment CI chain
+## They are considered unstable and will probably break your RGM distribution
+## RESERVED FOR EXPERT USERS ONLY !!!
+#enable_rawhide: false
+
 ##### Commercial 3rd-party software installation
 ## RGM can (or have to) require the installation of some software packages from third-party providers
 ## that are unfortunately distributed with a commercial license. So they are *not* installed by default
