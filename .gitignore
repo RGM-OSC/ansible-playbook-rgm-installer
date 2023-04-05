@@ -1,3 +1,7 @@
+# IDE exclusions
+/*.idea
+
+# Tree exclusions
 roles/*
 !roles/req*.yml
 host_vars/**
