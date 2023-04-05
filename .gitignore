@@ -1,5 +1,10 @@
 # IDE exclusions
-/*.idea
+/.idea
+/*.iml
+/.vscode
+/.workspace
+/.eclipse
+/**/*\~
 
 # Tree exclusions
 roles/*
