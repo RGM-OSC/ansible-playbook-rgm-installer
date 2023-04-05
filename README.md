@@ -1,4 +1,4 @@
-RGM Ansible plyabook
+RGM Ansible playbook
 ====================
 
 This is the Ansible playbook for **Rigby Group Monitoring** aka. [RGM](https://rgm-could.io) installation.
