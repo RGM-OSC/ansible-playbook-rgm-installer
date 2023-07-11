@@ -1,29 +1,29 @@
 ---
 
-- name: pre-flight play for host conformance
+- name: "Pre-flight play for host conformance"
   hosts: rgm
   remote_user: root
 
   tasks:
-  - name: ensure host_vars is linked to /etc/rgm
-    file:
-      path: host_vars/localhost
-      state: link
+    - name: "Ensure host_vars is linked to /etc/rgm"
+      ansible.builtin.file:
+        path: host_vars/localhost
+        state: link
 
-  - name: ensure obsolete RPM repos are removed
-    file:
-      path: "/etc/yum.repos.d/{{ item }}.repo"
-      state: absent
-    with_items:
-    - rgm-community
-    - rgm-partners
+    - name: "Ensure obsolete RPM repos are removed"
+      loop:
+        - rgm-community
+        - rgm-partners
+      ansible.builtin.file:
+        path: "/etc/yum.repos.d/{{ item }}.repo"
+        state: absent
 
 
-- name: RGM install play
+
+- name: "RGM install play"
   hosts: rgm
   remote_user: root
-
   roles:
-  - role-lvm-partitionner
-  - role-snmp
-  - role-rgm
+    - { role: role-lvm-partitionner }
+    - { role: role-snmp }
+    - { role: role-rgm }

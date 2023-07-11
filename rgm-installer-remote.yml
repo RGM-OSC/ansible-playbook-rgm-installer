@@ -2,37 +2,37 @@
 # This playbook replaces the one-liner RGM bootstrapper script
 # currently supports only "basic" RGM installation, with no "business" support.
 
-- name: RGM remote installer
+- name: "RGM remote installer"
   hosts: rgm
   remote_user: root
 
   pre_tasks:
 
-  - name: ensure EPEL is activated
-    yum:
-      name: epel-release
-      state: latest
-    register: epel_enabled
+    - name: "Ensure EPEL is activated"
+      register: epel_enabled
+      ansible.builtin.yum:
+        name: epel-release
+        state: latest
 
-  - name: install RGM prerequisites
-    yum:
-      name:
-      - openssl
-      - ansible
-      - git
-      state: latest
-      update_cache: "{{ epel_enabled.changed }}"
+    - name: "Install RGM prerequisites"
+      ansible.builtin.yum:
+        name:
+          - openssl
+          - ansible
+          - git
+        state: latest
+        update_cache: "{{ epel_enabled.changed }}"
 
-  - name: install Galaxy collections
-    command: ansible-galaxy collection install community.mysql
+    - name: "Install Galaxy collections"
+      ansible.builtin.command: ansible-galaxy collection install community.mysql
 
-  - name: retrieve RGM GPG key
-    get_url:
-      url: https://installer.rgm-cloud.io/RPM-GPG-KEY-rgm
-      dest: /etc/pki/rpm-gpg/RPM-GPG-KEY-rgm
-      mode: '0440'
+    - name: "Retrieve RGM GPG key"
+      ansible.builtin.get_url:
+        url: https://installer.rgm-cloud.io/RPM-GPG-KEY-rgm
+        dest: /etc/pki/rpm-gpg/RPM-GPG-KEY-rgm
+        mode: '0440'
 
   roles:
-  - role-lvm-partitionner
-  - role-snmp
-  - role-rgm
+    - { role: role-lvm-partitionner }
+    - { role: role-snmp }
+    - { role: role-rgm }

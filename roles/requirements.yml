@@ -1,11 +1,27 @@
 ---
 # vim: bs=2 sw=2 expandtab:
+roles:
+  - src: git+https://github.com/RGM-OSC/ansible-role-lvm-part.git
+    name: role-lvm-partitionner
 
-- src: git+https://github.com/RGM-OSC/ansible-role-lvm-part.git
-  name: role-lvm-partitionner
+  - src: git+https://github.com/RGM-OSC/ansible-role-snmp.git
+    name: role-snmp
 
-- src: git+https://github.com/RGM-OSC/ansible-role-snmp.git
-  name: role-snmp
+  - src: git+https://github.com/RGM-OSC/ansible-role-rgm.git
+    name: role-rgm
 
-- src: git+https://github.com/RGM-OSC/ansible-role-rgm.git
-  name: role-rgm
+collections:
+  - name: ansible.posix
+    version: 1.5.2
+
+  - name: community.general
+    version: 7.1.0
+
+  - name: community.mysql
+    versionf: 3.7.2
+
+  - name: community.grafana
+    version: 1.5.4
+
+  - name: community.windows
+    version: 2.0.0
