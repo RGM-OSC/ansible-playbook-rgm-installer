@@ -2,12 +2,15 @@
 # vim: bs=2 sw=2 expandtab:
 roles:
   - src: git+https://github.com/RGM-OSC/ansible-role-lvm-part.git
+    version: master
     name: role-lvm-partitionner
 
   - src: git+https://github.com/RGM-OSC/ansible-role-snmp.git
+    version: master
     name: role-snmp
 
   - src: git+https://github.com/RGM-OSC/ansible-role-rgm.git
+    version: master
     name: role-rgm
 
 collections:
@@ -18,7 +21,7 @@ collections:
     version: 7.1.0
 
   - name: community.mysql
-    versionf: 3.7.2
+    version: 3.7.2
 
   - name: community.grafana
     version: 1.5.4

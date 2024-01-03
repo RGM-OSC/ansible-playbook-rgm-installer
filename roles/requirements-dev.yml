@@ -6,11 +6,11 @@ roles:
     name: role-lvm-partitionner
 
   - src: git+https://github.com/RGM-OSC/ansible-role-snmp.git
-    version: dev
+    version: rawhide/el9
     name: role-snmp
 
   - src: git+https://github.com/RGM-OSC/ansible-role-rgm.git
-    version: dev
+    version: rawhide/el9
     name: role-rgm
 
 collections:
