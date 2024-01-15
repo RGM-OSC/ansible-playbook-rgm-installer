@@ -21,7 +21,6 @@ collections:
     version: 7.1.0
 
   - name: community.mysql
-    versionf: 3.7.2
 
   - name: community.grafana
     version: 1.5.4
