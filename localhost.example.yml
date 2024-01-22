@@ -13,7 +13,7 @@
 ##### Systems managed through Red Hat Satellite or Foreman using RHSM
 ## For sush systems, we *must* know *if* EPEL is managed by RHSM. In such case, it is
 ## *mandatory* to know which channel provides EPEL as we must exclude *conflicting*
-## packages with RGM !
+## packages with RGM !
 #rhsm_epel_repo: myorg_CentOS7_EPEL
 
 ##### Apache HTTPd server customization
